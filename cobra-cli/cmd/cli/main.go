@@ -1,14 +1,14 @@
 package main
 
 import (
+	"github.com/Farmijo/golangStuff/cobra-cli/internal/cli"
 	"github.com/spf13/cobra"
 )
-
-const idFlag = "t"
 
 type CobraFn func(cmd *cobra.Command, args []string)
 
 func main() {
 	rootCmd := &cobra.Command{Use: "guitars-cli"}
-	rootCmd.AddCommand(InitGuitarsCommand())
+	rootCmd.AddCommand(cli.InitInstrumentsCmd())
+	rootCmd.Execute()
 }
